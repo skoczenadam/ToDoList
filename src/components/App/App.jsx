@@ -4,24 +4,23 @@ import { NewTask } from "../NewTask/NewTask";
 import { TasksCounter } from "../TasksCounter/TasksCounter";
 import { TaskList } from "../TaskList/TaskList";
 import css from "./App.module.css";
+import nextId from "react-id-generator";
 
 const taskList = [];
 
 function App() {
   const [tasks, setTasks] = useState(taskList);
   const [newTaskOpen, setNewTaskOpen] = useState(false);
-  const [newTask, setNewTask] = useState("");
 
   console.log(tasks);
 
-  function submitHandler(e) {
-    e.preventDefault();
-    if (newTask === "") return alert("Nic nie wpisano!");
+  function submitHandler(task) {
+    if (task === "") return alert("Nic nie wpisano!");
     setTasks((prevTasks) => [
       ...prevTasks,
-      { name: newTask, ID: prevTasks.length + 1, isDone: false },
+      { name: task, ID: nextId(), isDone: false },
     ]);
-    setNewTask("");
+
     setNewTaskOpen(false);
   }
 
@@ -43,11 +42,7 @@ function App() {
         <h1 className={css.title}>Do zrobienia</h1>
         <TasksCounter onTaskCounter={tasks.length} />
         {newTaskOpen ? (
-          <InputTask
-            onSubmit={submitHandler}
-            onSetNewTask={setNewTask}
-            onNewTask={newTask}
-          />
+          <InputTask onSetNewTask={submitHandler} />
         ) : (
           <NewTask onClick={() => setNewTaskOpen(true)} />
         )}

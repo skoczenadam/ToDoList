@@ -1,14 +1,23 @@
+import { useState } from "react";
 import css from "./InputTask.module.css";
 
-export function InputTask({ onSubmit, onSetNewTask, onNewTask }) {
+export function InputTask({ onSetNewTask }) {
+  const [inputValue, setInputValue] = useState("");
+  function onSubmitHandler(e) {
+    e.preventDefault();
+
+    const task = inputValue;
+
+    onSetNewTask(task);
+    setInputValue("");
+  }
   return (
     <>
-      <form className={css.form} onSubmit={onSubmit}>
+      <form className={css.form} onSubmit={onSubmitHandler}>
         <input
           type="text"
           className={css.input}
-          value={onNewTask}
-          onChange={(e) => onSetNewTask(e.target.value)}
+          onChange={(e) => setInputValue(e.target.value)}
         ></input>
         <button type="submit" className={css.button}>
           Dodaj

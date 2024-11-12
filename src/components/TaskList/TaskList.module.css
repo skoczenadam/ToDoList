@@ -15,6 +15,7 @@
 
 .listContainer {
   display: flex;
+  align-items: center;
 
 }
 
@@ -25,6 +26,7 @@
   color: #2978A0;
   font-weight: bold;
   font-size: 20px;
+  overflow:scroll;
 }
 
 .button {
@@ -38,6 +40,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   color: #503D42;
+  max-height: 36.3px;
 }
 
 .button:hover {

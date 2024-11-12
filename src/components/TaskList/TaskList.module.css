@@ -1,0 +1,55 @@
+.taskList {
+  width: 100%;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.task {
+  margin: 10px 0;
+}
+
+.aboveline {
+  border-top: 2px solid #503D42;
+  border-radius: 5px;
+}
+
+.listContainer {
+  display: flex;
+
+}
+
+.taskName {
+  width: 100%;
+  margin: auto 0;
+  margin-top: 15px;
+  color: #2978A0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.button {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #84C318;
+  border: 2px solid #503D42;
+  transition: 100ms;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #503D42;
+}
+
+.button:hover {
+  background-color: #a6E53a;
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.done {
+  text-decoration: line-through;
+  color: #D1462F;
+}

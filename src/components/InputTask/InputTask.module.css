@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  margin-top: 20px;
+}
+
+.input {
+  width: 100%;
+  line-height: 30px;
+  outline: none;
+  border: 2px solid #503D42;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+.input:focus {
+  border: 2px solid #84C318;
+}
+
+.button {
+  margin-left: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color:#84C318;
+  border: 2px solid #503D42;
+  transition: 100ms;
+  border-radius: 5px;
+  color: #503D42;
+}
+
+.button:hover {
+  background-color: #a6E53a;
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.8);
+}
